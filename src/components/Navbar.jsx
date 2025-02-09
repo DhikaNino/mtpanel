@@ -7,16 +7,13 @@ export default function Navbar() {
 
   return (
     <nav className="p-4 bg-gray-900 text-white w-full flex items-center justify-between">
-      {/* Sidebar Toggle / Brand */}
       <div className="flex items-center gap-4">
-        {/* Server Info */}
         <div className="hidden md:flex items-center gap-2 text-sm text-gray-300">
           <FaServer />
           <span>Ubuntu 22.04 | 192.168.1.100</span>
         </div>
       </div>
 
-      {/* Search Bar */}
       <div className="relative hidden md:block">
         <input
           type="text"
@@ -26,18 +23,14 @@ export default function Navbar() {
         <FaSearch className="absolute right-3 top-3 text-gray-400" />
       </div>
 
-      {/* Right Icons */}
       <div className="flex items-center gap-4">
-        {/* Server Status */}
         <div className="hidden md:flex items-center gap-2 text-sm text-green-400">
           <FaGlobe />
           <span>Online</span>
         </div>
 
-        {/* Notification Icon */}
         <FaBell className="text-xl cursor-pointer hover:text-gray-400" />
 
-        {/* Profile Dropdown */}
         <div className="relative">
           <FaUserCircle
             className="text-2xl cursor-pointer hover:text-gray-400"

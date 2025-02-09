@@ -10,13 +10,11 @@ export default function Sidebar({ children }) {
     return (
         <div className="flex h-screen">
             <div id="menu" className="bg-gray-900 w-72 min-h-screen border-r border-white flex flex-col">
-                {/* Logo */}
                 <a href="/" className="p-6 flex items-center space-x-3 text-white">
                     <img src="/logo.png" alt="Logo" className="w-10 h-10" />
                     <span className="text-xl font-semibold">MT Panel</span>
                 </a>
 
-                {/* Menu Navigasi */}
                 <nav className="mt-4 flex-1">
                     <ul className="space-y-2">
                         <SidebarItem to="/" icon={<Server size={20} color="gray" />} text="Home" />
@@ -47,10 +45,8 @@ export default function Sidebar({ children }) {
                     </ul>
                 </nav>
 
-                {/* Terminal Dropdown */}
 
 
-                {/* Logout di bawah */}
                 <div className="p-4">
                     <SidebarItem to="/logout" icon={<LogOut size={20} />} text="Logout" />
                 </div>
@@ -74,7 +70,6 @@ export default function Sidebar({ children }) {
     );
 }
 
-// Komponen SidebarItem dengan active state
 function SidebarItem({ to, icon, text }) {
     const location = useLocation();
     const isActive = location.pathname === to;
