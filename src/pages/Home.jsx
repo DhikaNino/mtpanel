@@ -103,7 +103,13 @@ const StatCard = ({ icon, title, value }) => {
       </div>
       <div className="mt-3">
         <div className="w-full bg-gray-700 rounded-full h-3">
-          <div className="h-3 bg-blue-500 rounded-full" style={{ width: `${value}%` }}></div>
+          <div
+            className={`h-full rounded-full transition-all duration-300 ${value < 50 ? "bg-green-500" : value < 75 ? "bg-yellow-500" : "bg-red-500"
+              }`}
+            style={{ width: `${value}%` }}
+          >
+
+          </div>
         </div>
         <p className="text-sm text-gray-300 mt-1">{value}%</p>
       </div>
