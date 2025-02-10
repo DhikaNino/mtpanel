@@ -6,6 +6,7 @@ import DatabaseManagement from "./pages/DatabaseManagement";
 import DomainManagement from "./pages/DomainManagement";
 import Logs from "./pages/Logs";
 import TerminalPage from "./pages/TerminalPage";
+import NotFound from "./pages/NotFound";
 
 function App() {
   const location = useLocation();
@@ -20,7 +21,7 @@ function App() {
         <Route path="/logs" element={<Sidebar><Logs/></Sidebar>} />
         <Route path="/terminal" element={<Sidebar><TerminalPage/></Sidebar>} />
         <Route path="/auth" element={<Auth />} />
-        <Route path="*" element={<Home />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   );

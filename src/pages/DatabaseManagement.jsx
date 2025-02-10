@@ -22,18 +22,16 @@ export default function DatabaseManagement() {
     <div className="p-6 space-y-6">
       <h1 className="text-2xl font-semibold">Database Management</h1>
 
-      {/* Statistik */}
+  
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <StatCard title="Total Databases" value={databases.length} icon={<Database size={24} />} />
         <StatCard title="Total Users" value={5} icon={<UserPlus size={24} />} />
       </div>
 
-      {/* Tombol Tambah */}
       <div className="flex gap-4">
         <button className="px-4 py-2 bg-indigo-700 text-white rounded" onClick={() => setOpenAddDB(true)}>+ Add Database</button>
       </div>
 
-      {/* Tabel Database */}
       <div className="overflow-x-auto bg-gray-800 text-white p-4 rounded-lg">
         <table className="w-full border-collapse border border-gray-700">
           <thead>
@@ -63,7 +61,6 @@ export default function DatabaseManagement() {
         </table>
       </div>
 
-      {/* Dialog Tambah Database */}
       {openAddDB && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-gray-900 p-6 rounded-lg w-1/3">

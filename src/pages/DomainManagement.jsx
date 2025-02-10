@@ -24,54 +24,90 @@ export default function DomainManagement() {
     <div className="p-6 space-y-6 bg-gray-900 min-h-screen text-white">
       <h2 className="text-2xl font-semibold">Domain Management</h2>
       
-      <div className="flex space-x-4">
+      
+      <h1>Main Domain</h1>
+      <div className="flex justify-between items-center space-x-4">
         <input
           type="text"
-          placeholder="Enter domain..."
+          placeholder="Search Domain..."
           value={newDomain}
           onChange={(e) => setNewDomain(e.target.value)}
           className="p-2 bg-gray-800 border border-gray-700 rounded-md focus:ring"
         />
-        <select
-          className="p-2 bg-gray-800 border border-gray-700 rounded-md"
-          value={newType}
-          onChange={(e) => setNewType(e.target.value)}
-        >
-          <option value="Primary">Primary</option>
-          <option value="Subdomain">Subdomain</option>
-        </select>
+       
         <button
           onClick={handleAddDomain}
           className="bg-indigo-700 hover:bg-indigo-800 p-2 rounded-md flex items-center space-x-2"
         >
-          <Plus size={16} /> <span>Add</span>
+          <Plus size={16} /> <span>Tambah Domain</span>
         </button>
       </div>
-
-      <div className="bg-gray-800 p-4 rounded-md shadow">
-        <table className="w-full text-left">
+      <div className="overflow-x-auto bg-gray-800 text-white p-4 rounded-lg">
+        <table className="w-full border-collapse border border-gray-700">
           <thead>
-            <tr className="border-b border-gray-700">
-              <th className="p-2">Domain</th>
-              <th className="p-2">Type</th>
-              <th className="p-2">Subdomains</th>
-              <th className="p-2">Actions</th>
+            <tr className="bg-gray-700">
+              <th className="p-2 border border-gray-600">Domain</th>
+              <th className="p-2 border border-gray-600">Type</th>
+              <th className="p-2 border border-gray-600">Subdomains</th>
+              <th className="p-2 border border-gray-600">Actions</th>
             </tr>
           </thead>
           <tbody>
             {domains.map((domain, index) => (
-              <tr key={index} className="border-b border-gray-700">
-                <td className="p-2">{domain.name}</td>
-                <td className="p-2">{domain.type}</td>
-                <td className="p-2">{domain.subdomains}</td>
-                <td className="p-2 flex space-x-2">
-                  <button className="text-yellow-400 hover:text-yellow-500">
-                    <Pencil size={16} />
-                  </button>
-                  <button className="text-red-500 hover:text-red-600">
-                    <Trash size={16} />
-                  </button>
+              <tr key={index} className="text-center">
+                <td className="p-2 border border-gray-600">{domain.name}</td>
+                <td className="p-2 border border-gray-600">{domain.type}</td>
+                <td className="p-2 border border-gray-600">{domain.subdomains}</td>
+                <td className="p-2 border border-gray-600"> 
+                  <div className="flex justify-center gap-2 items-center">
+                    <button className="text-red-400 flex gap-1 items-center"><Trash size={16} /> Hapus</button>
+                  </div>
                 </td>
+       
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <h1>Sub Domain</h1>
+      <div className="flex justify-between items-center space-x-4">
+        <input
+          type="text"
+          placeholder="Search Sub Domain..."
+          value={newDomain}
+          onChange={(e) => setNewDomain(e.target.value)}
+          className="p-2 bg-gray-800 border border-gray-700 rounded-md focus:ring"
+        />
+       
+        <button
+          onClick={handleAddDomain}
+          className="bg-indigo-700 hover:bg-indigo-800 p-2 rounded-md flex items-center space-x-2"
+        >
+          <Plus size={16} /> <span>Tambah Sub Domain</span>
+        </button>
+      </div>
+      <div className="overflow-x-auto bg-gray-800 text-white p-4 rounded-lg">
+        <table className="w-full border-collapse border border-gray-700">
+          <thead>
+            <tr className="bg-gray-700">
+              <th className="p-2 border border-gray-600">Domain</th>
+              <th className="p-2 border border-gray-600">Type</th>
+              <th className="p-2 border border-gray-600">Subdomains</th>
+              <th className="p-2 border border-gray-600">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {domains.map((domain, index) => (
+              <tr key={index} className="text-center">
+                <td className="p-2 border border-gray-600">{domain.name}</td>
+                <td className="p-2 border border-gray-600">{domain.type}</td>
+                <td className="p-2 border border-gray-600">{domain.subdomains}</td>
+                <td className="p-2 border border-gray-600"> 
+                  <div className="flex justify-center gap-2 items-center">
+                    <button className="text-red-400 flex gap-1 items-center"><Trash size={16} /> Hapus</button>
+                  </div>
+                </td>
+       
               </tr>
             ))}
           </tbody>

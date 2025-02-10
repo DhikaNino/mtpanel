@@ -55,7 +55,6 @@ const Home = () => {
     <div className="p-6 space-y-6">
       <h1 className="text-2xl font-semibold">Status</h1>
 
-      {/* Server Stats */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <StatCard icon={<Cpu size={24} />} title="CPU Usage" value={serverStats.cpu[serverStats.cpu.length - 1] || 0} />
         <StatCard icon={<MemoryStick size={24} />} title="RAM Usage" value={serverStats.ram[serverStats.ram.length - 1] || 0} />
@@ -73,7 +72,6 @@ const Home = () => {
       </div>
       <h1 className="text-2xl font-semibold">Traffic</h1>
 
-      {/* Traffic Stats */}
       <div className="grid grid-cols-1 gap-6">
         <ChartCard title="Traffic Stats" data={traffic} labels={traffic.timestamps} />
       </div>
@@ -93,7 +91,6 @@ const OverviewCard = ({ icon, title, value }) => {
   );
 };
 
-// Component untuk Statistik
 const StatCard = ({ icon, title, value }) => {
   return (
     <div className="bg-gray-800 text-white p-4 rounded-lg shadow">
@@ -117,7 +114,6 @@ const StatCard = ({ icon, title, value }) => {
   );
 };
 
-// Component untuk Grafik Chart.js
 const ChartCard = ({ title, data, labels }) => {
   const chartData = {
     labels,
